@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ room.name }}</h2>
+    <h3>Room's details </h3>
+    <p>Hotel: {{ room.hotel.name }}</p>
+    <P>Room number: {{room.serial_number}}</P>
+    <p>Max Guests: {{ room.max_guests }}</p>
+    <p>Price per Night: {{ room.price_for_night }} NIS</p>
+    <p>Size: {{ room.size }} sqm</p>
+
+    <a href="{% url 'reservation_form' pk=room.pk %}" target="_blank" class="button">Book Now</a>
+    
+{% endblock %}

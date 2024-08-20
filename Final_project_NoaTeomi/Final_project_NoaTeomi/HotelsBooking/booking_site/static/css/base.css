@@ -1,0 +1,115 @@
+h1, h2, h3, p {
+    color: rgb(17, 17, 17);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+a {
+    text-align: center;
+}
+
+p {
+    font-size: 22px;
+}
+
+div.errorlist {
+    font-size: 22px;
+}
+
+li {
+    text-align: center;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+body {
+    background-image: url("holiday.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    border: 5px solid rgb(54, 21, 172);
+    padding: 200px;
+    background-position: center;
+    background-size: 70%;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+/* Consolidated form styles */
+form {
+    background: #7493d4;
+    padding: 10px; 
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    margin: 0 auto; 
+}
+
+.form-group {
+    margin-bottom: 20px;  
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; 
+    padding: 6px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

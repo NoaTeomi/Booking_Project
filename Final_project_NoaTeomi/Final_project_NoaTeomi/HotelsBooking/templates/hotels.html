@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 style="text-align: center;">  Our Hotels Page </h2>
+
+<ul class="ul">
+
+{% for hotel in hotel_list %}
+<li><a href="{{ hotel.get_absolute_url }}">{{ hotel.name }}</a></li>
+{% endfor %}
+
+</ul>
+
+{% endblock content %}
