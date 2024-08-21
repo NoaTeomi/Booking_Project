@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HotelsBooking.com</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <style>
+        header {
+            text-align: center;
+        }
+
+        .auth-links {
+            position: absolute;
+            top: 50px;
+            left: 30px;
+        }
+        .auth-links a {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'hotels' %}">Hotels</a>
+        </nav>
+    </header>
+
+    <div class="auth-links"
+         {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}</p>
+            <a href="{% url 'logout' %}">Log Out</a>
+         {% else %}
+             <p>You are not logged in</p>
+             <a href="{% url 'login' %}">Log In</a>
+             <a href="{% url 'signup' %}">Sign Up</a>
+         {% endif %}
+    </div>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

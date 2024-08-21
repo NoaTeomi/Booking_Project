@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Your order confirmation</h1>
+<p>Thank you for your reservation, {{ reservation.user.username }}!</p>
+<p>Your confirmation number is: {{ reservation.confirmation_number }}</p>
+<p>Check-in Date: {{ reservation.check_in_date }}</p>
+<p>Check-out Date: {{ reservation.check_out_date }}</p>
+<p>Hotel: {{ reservation.hotel.name }}</p>
+<p>Room: {{ reservation.room.name }}</p>
+<p>Total price:</p>
+<p>{{reservation.total_price}} ILS</p>
+{% endblock content %}
