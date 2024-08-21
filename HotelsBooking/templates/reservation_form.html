@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Reservation Form</h2>
+<p>Customer Name: {{ customer_name }}</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div>
+        <label for="check_in_date">Check-in Date:</label>
+        <input type="date" id="check_in_date" name="check_in_date" required>
+    </div>
+    <br>
+    <div>
+        <label for="check_out_date">Check-out Date:</label>
+        <input type="date" id="check_out_date" name="check_out_date" required>
+    </div>
+    <br>
+    <div>
+        <label for="chosen_hotel">Choose a Hotel:</label>
+        <select id="chosen_hotel" name="chosen_hotel" required>
+            {% for hotel in form.fields.chosen_hotel.queryset %}
+                <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="chosen_room">Choose a Room:</label>
+        <select id="chosen_room" name="chosen_room" required>
+            {% for room in form.fields.chosen_room.queryset %}
+                <option value="{{ room.id }}">{{ room.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br>
+ 
+    <button type="submit">Submit Reservation</button>
+</form>
+
+{% if form.errors %}
+    <div class="errorlist">
+        <ul>
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% endblock %}

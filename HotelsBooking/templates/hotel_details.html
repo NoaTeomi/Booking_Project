@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ hotel.name }}</h2>
+<h3>{{ hotel.rank }} Stars Hotel</h3>
+<h3>{{ hotel.country }}</h3>
+<h3>{{ hotel.city }}</h3>
+<h3>Number of Rooms: {{ hotel.num_of_rooms }}</h3>
+
+<h3>Rooms:</h3>
+<ul>
+    {% for room in hotel.get_rooms %}
+    <li><a href="{{ room.get_absolute_url }}">{{ room.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
